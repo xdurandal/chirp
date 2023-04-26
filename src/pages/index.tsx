@@ -16,9 +16,39 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#E8DBFC] to-[#F8F9D2]">
-        <div>
+        {/* <div>
           {!user.isSignedIn && <SignInButton />}
           {!!user.isSignedIn && <SignOutButton />}
+        </div> */}
+        <div>
+          <hr className="h-0.25 mb-5 w-full bg-gray-500" />
+          <div className="mb-4">
+            <button
+              type="button"
+              className="mx-auto flex w-full max-w-sm rounded-full bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500 p-5 text-2xl font-bold uppercase text-white shadow-md hover:from-indigo-600 hover:via-pink-600 hover:to-red-600 focus:outline-none"
+            >
+              <div className="sm:flex-cols-12 flex gap-2">
+                <div className="col-span-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-12 w-12"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"
+                    />
+                  </svg>
+                </div>
+                {!user.isSignedIn && <SignInButton />}
+                {!!user.isSignedIn && <SignOutButton />}
+              </div>
+            </button>
+          </div>
         </div>
         <SignIn path="/sign-in" routing="path" signUpUrl="/sign-up" />
       </main>
